@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agent Liza Bird</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+  <div class="container" id="container">
+    <header id="header">
+      <p class="">Агент Liza Bird знаходиться на пляжі для виявлення крейсера Москва і його знищення. Спецслужби РФ не змогли виявити агента, і вирішили щогодини напалювати всіх на пляжі, щоб саботувати місію. Допоможи агенту Liza Bird бути у свідомості і не завалити завдання, адже її толер зможе витримати всього 2 напасики. Т.к. агент Liza Bird втратила засоби зв'язку, то для передачі координат для БПЛА піде близько 8 годин, і ще близько 10 на те, щоб дати команду відпрацювати по цілі. </p>
+      <!-- <button id="startgame">нажать чтобы начать</button> -->
+      <div id="instruction"></div>
+
+
+
+    </header>
+
+
+    <main id="main" hidden>
+      <div id="game">
+        <div id="sky" class="background"></div>
+        <div id="water" class="background"></div>
+        <div id="dust" class="background"></div>
+        <div id="birds_right"></div>
+        <div id="bird"></div>
+        <div id="bayraktar"></div>
+        <div id="cruiser"></div>
+        <div id="rocket"></div>
+        <div id="bang"></div>
+        <div id="sun"></div>
+        <div id="dino"></div>
+        <div id="cactus"></div>
+        <div id="failed" hidden></div>
+      </div>
+      <div id="info">
+        <p>Толерантність:<span id="life"></span></p>
+        <p>Не хапанула <span id="distance"></span></p>
+      </div>
+      <div id="tap"></div>
+      <audio id="cough" src="img/cough.mp3"></audio>
+      <audio id="audioBg" src="img/bg-audio.mp3"></audio>
+      <!-- <button id="btnjump">jump</button> -->
+  </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>

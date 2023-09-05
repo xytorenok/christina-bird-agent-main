@@ -1,0 +1,477 @@
+* {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  height: calc(100vh - 100px) ;
+}
+
+#header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+#header p{
+  margin-top: 50px;
+  font-size: 24px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+#instruction{
+  margin: auto;
+  width: 100%;
+  max-width: 300px;
+  min-height: 150px;
+  height: 100%;
+  background: url(img/start-instruction.png) no-repeat center;
+  background-size: contain;
+  /* background-size: 100% 100%; */
+
+}
+
+#startgame {
+  margin-top: 20px;
+  width: 100%;
+  height: 40%;
+  background: url(img/skyv.png) no-repeat center;
+  background-size: cover;
+}
+
+#main{
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  height: 100%;
+}
+
+#game {
+  width: 100%;
+  height: 200px;
+  min-height: 200px;
+  position: relative;
+  overflow: hidden;
+  background-color: aqua;
+}
+
+#failed{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: url(img/failed.png) no-repeat center;
+  background-size: contain;
+}
+
+.game::before {
+  content: '';
+  position: absolute;
+  height: 1px;
+  background: black;
+  left: 0;
+  right: 0;
+  bottom: 9px;
+}
+
+#info {
+  display: flex;
+  justify-content: space-around;
+}
+
+#tap{
+  margin: auto;
+  width: 100%;
+  height: 40%;
+  background: url(img/tap.png) no-repeat;
+  background-position: center 2px;
+  background-size: 100%;
+}
+
+#btnjump {
+  width: 100%;
+  height: 40%;
+  background: url(img/skyv.png);
+  background-size: cover;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#sky {
+  opacity: 0.3;
+  background-image: url(./img/skyv.png);
+  z-index: 2;
+}
+
+#water {
+  background-image: url(./img/water.png);
+  z-index: 2;
+}
+
+#dust {
+  background-image: url(./img/dust.png);
+  z-index: 3;
+}
+
+#sun {
+  width: 70px;
+  height: 70px;
+  background-image: url(./img/sun.png);
+  background-size: 70px 70px;
+  position: absolute;
+  top: -30px;
+  z-index: 1;
+  animation: sun infinite 20000ms linear;
+}
+
+#birds_right {
+  position: absolute;
+  z-index: 4;
+  width: 30px;
+  height: 20px;
+  background-image: url(./img/birds-to-right.png);
+  background-size: 30px 20px;
+  left: -30px;
+  animation: birds-to-right infinite 40000ms linear;
+}
+
+#bird {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-image: url(./img/bird.png);
+  background-size: 30px 30px;
+  bottom: 0;
+  left: 0;
+  z-index: 4;
+  animation: meal infinite 1000ms linear, go-away infinite 50000ms linear;
+}
+
+
+
+#bayraktar {
+  position: absolute;
+  width: 100px;
+  height: 30px;
+  background-image: url(./img/bayraktar.png);
+  background-size: 100px 30px;
+  bottom: 160px;
+  left: calc(100% + 70px);
+  z-index: 5;
+  transform: translate(-50%);
+  /* animation: bayraktarMov 3000ms linear; */
+}
+
+#cruiser {
+  position: absolute;
+  width: 150px;
+  height: 50px;
+  background-image: url(./img/cruiserv.png);
+  background-size: 150px 50px;
+  bottom: 100px;
+  left: 150px;
+  z-index: 5;
+  transform: translate(-50%);
+  animation: cruiserMov 10000ms linear;
+}
+
+#bang {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-image: url(./img/bang.png);
+  background-size: 100px 100px;
+  bottom: 75px;
+  left: 150px;
+  z-index: 5;
+  transform: translate(-50%);
+  opacity: 0;
+  /* animation: bang-bang 2000ms linear; */
+}
+
+
+#rocket {
+  position: absolute;
+  width: 70px;
+  height: 20px;
+  background-image: url(./img/rocketv.png);
+  background-size: 70px 20px;
+  bottom: 100px;
+  left: calc(100% + 70px);
+  z-index: 5;
+  transform: translate(-50%);
+  /* animation: rocket 15000ms linear; */
+}
+
+
+
+#dino {
+  width: 70px;
+  height: 70px;
+  background-image: url(./img/drozd.png);
+  background-size: 70px 70px;
+  position: relative;
+  top: 125px;
+  left: 50px;
+  z-index: 10;
+}
+
+.jump {
+  animation: jump infinite 600ms linear;
+}
+
+#cactus {
+  width: 40px;
+  height: 70px;
+  background-image: url(./img/bong.png);
+  background-size: 40px 70px;
+  position: relative;
+  top: 55px;
+  left: 100%;
+  z-index: 5;
+  animation: cactusMov infinite 2000ms linear;
+}
+
+
+
+
+@keyframes cactusMov {
+  0% {
+    left: 100%;
+  }
+
+  100% {
+    left: -40px;
+  }
+}
+
+@keyframes cruiseDying {
+  0% {
+    left: 160px;
+    opacity: 1;
+  }
+
+  25% {
+    left: 130px;
+  }
+
+  50% {
+    left: 160px;
+  }
+
+  75% {
+    left: 130px;
+  }
+
+  100% {
+    bottom: 70px;
+    opacity: 0;
+  }
+}
+
+@keyframes bang-bang {
+  0% {
+    left: 160px;
+    
+  }
+
+  25% {
+    left: 130px;
+    opacity: 1;
+    scale: 1.1;
+  }
+
+  50% {
+    left: 160px;
+    opacity: 0;
+    scale: 1;
+  }
+
+  75% {
+    left: 130px;
+    opacity: 1;
+    scale: 1.1;
+  }
+
+  100% {
+    bottom: 30px;
+    opacity: 0;
+    opacity: 0;
+    scale: 1;
+  }
+}
+
+@keyframes bayraktarMov {
+  0% {
+    left: 100%;
+  }
+
+  50% {
+    left: -100px;
+    transform: scaleX(1);
+  }
+
+  60% {
+    transform: scaleX(-1);
+  }
+
+  100% {
+    left: 100%;
+    transform: scaleX(-1);
+  }
+}
+
+
+
+@keyframes jump {
+  0% {
+    top: 125px;
+  }
+
+  30% {
+    top: 40px;
+  }
+
+  50% {
+    top: 20px;
+  }
+
+  80% {
+    top: 90px;
+  }
+
+  100% {
+    top: 125px;
+  }
+}
+
+@keyframes sun {
+  0% {
+    left: 100%;
+    top: -50px;
+  }
+
+  25% {
+    top: -30px;
+  }
+
+  50% {
+    top: -40px;
+  }
+
+  75% {
+    top: -30px;
+  }
+
+  100% {
+    left: -60px;
+    top: -40px;
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes birds-to-right {
+  0% {
+    left: -30px;
+    top: 0;
+  }
+
+  50% {
+    top: 30px;
+  }
+
+  100% {
+    left: 100%;
+    top: 0;
+  }
+}
+
+@keyframes meal {
+  0% {
+    transform: rotate(0deg);
+    bottom: 0;
+  }
+
+  25% {
+    transform: rotate(20deg);
+    bottom: 5px;
+  }
+
+  50% {
+    transform: rotate(0deg);
+    bottom: 0;
+  }
+
+  75% {
+    transform: rotate(20deg);
+    bottom: 3px;
+  }
+
+  100% {
+    transform: rotate(0deg);
+    bottom: 0;
+  }
+}
+
+@keyframes go-away {
+  0% {}
+
+  50% {
+    left: 100%;
+    transform: scaleX(1);
+  }
+
+  60% {
+    transform: scaleX(-1);
+  }
+
+  100% {
+    left: 0%;
+    transform: scaleX(-1);
+
+  }
+}
+
+@keyframes cruiserMov {
+  0% {
+    left: 100%;
+  }
+
+  100% {
+    left: 150px;
+  }
+}
+
+@keyframes rocket {
+  0% {
+    bottom: 150px;
+    left: 100%;
+  }
+
+  100% {
+    left: 150px;
+  }
+}
+
+
+@media (max-width: 550px) {
+  #header p{
+    margin-top: 0px;
+    font-size: 16px;
+  }
+}
